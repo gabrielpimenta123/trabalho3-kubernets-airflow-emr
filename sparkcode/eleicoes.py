@@ -15,13 +15,21 @@ from delta.tables import *
 
 print("Reading CSV file from S3...")
 
-schema = "PassengerId int, Survived int, Pclass int, Name string, Sex string, Age double, SibSp int, Parch int, Ticket string, Fare double, Cabin string, Embarked string"
-df = spark.read.csv(
-    "s3://dl-landing-zone-539445819060/titanic", 
+schema1 = "PassengerId int, Survived int, Pclass int, Name string, Sex string, Age double, SibSp int, Parch int, Ticket string, Fare double, Cabin string, Embarked string"
+df1 = spark.read.csv(
+    "s3://airflow-datasets/voto_branco", 
+    header=True, schema=schema, sep=";"
+)
+schema1 = "PassengerId int, Survived int, Pclass int, Name string, Sex string, Age double, SibSp int, Parch int, Ticket string, Fare double, Cabin string, Embarked string"
+df2 = spark.read.csv(
+    "s3://airflow-datasets/voto_nominal_valido", 
     header=True, schema=schema, sep=";"
 )
 
-print("Writing titanic dataset as a delta table...")
+
+print("Writing elections dataset as a delta table...")
+
+'''
 df.write.format("delta").mode("overwrite").save("s3://dl-processing-zone-539445819060/silver/titanic_delta")
 
 print("Updating and inserting new rows...")
@@ -70,3 +78,4 @@ print("Old data - with time travel")
 )
 
 old.generate("symlink_format_manifest")
+'''
