@@ -56,7 +56,7 @@ def trabalho_final():
                 ],
                 'KeepJobFlowAliveWhenNoSteps': True,
                 'TerminationProtected': False,
-                'Ec2SubnetId': 'subnet-0c4ba04435b556a48'
+                'Ec2SubnetId': 'subnet-08ebf155122197fd5'
             },
 
             Applications=[{'Name': 'Spark'}, {'Name': 'Hive'}, {'Name': 'JupyterEnterpriseGateway'}, {'Name': 'JupyterHub'}],
