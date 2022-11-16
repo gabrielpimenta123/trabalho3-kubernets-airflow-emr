@@ -89,7 +89,7 @@ def trabalho_final():
                                 '--master', 'yarn',
                                 '--deploy-mode', 'cluster',
                                 '--packages', 'io.delta:delta-core_2.12:2.1.0',
-                                's3://airflow-emr-code/eleicoes.py'
+                                's3://airflow-emr-code/votos_codigo.py'
                                 ]
                     }
                 }
